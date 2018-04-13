@@ -1,0 +1,105 @@
+body{
+  background-color: #8D9E71;
+  margin: 0px;
+  padding: 0px;
+  color: #ACC18A;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  background-color: #2C2A28;
+	padding: 5px 20px;
+}
+
+header a {
+  font-size: 20px;
+  color: #828282;
+  font-family: cursive;
+  text-decoration: none;
+}
+
+#back {
+  background-color: #647454;
+  position: fixed;
+  width: 80%;
+  left: 10%;
+  z-index: -1;
+  top: 0;
+  height: 100%;
+}
+
+#content {
+  width: 70%;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 16px;
+  font-family: serif;
+}
+
+footer {
+  position: fixed;
+  top: 96%;
+  height: 4%;
+  width: 100%;
+  background-color: #2C2A28;
+  font-size: 12px;
+  font-family: monospace;
+  color: #828282;
+  padding: 7px;
+}
+
+footer div {
+	position: relative;
+}
+
+a {
+  color: #C2D1A9;
+}
+
+button {
+  //do this
+}
+
+canvas {
+  background-color: #D8DFCF;
+}
+
+.center {
+  margin: auto;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.dull {
+  color: #8D9E71;
+}
+
+.error {
+  color: orange;
+}
+
+.op-box {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 40%;
+  margin: auto;
+}
+
+.op-box .box-name {
+  font-weight: bold;
+  border-bottom: 1px dotted black;
+  padding: 5px;
+}
+
+.op-box .box-ops {
+  display: inline-grid;
+  margin: 10px 30px;
+}
