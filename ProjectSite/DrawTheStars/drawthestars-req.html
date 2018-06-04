@@ -8,18 +8,17 @@
     <header id="header"></header>
     <div id="back"></div>
     <div id="content">
-      <p><b><a href="drawthestars-simple.html">Draw a star?</a> || Draw a bunch of stars? || <a href="drawthestars-search.html">Draw a ton of stars?</a></b></p>
-      <table class="center">
+      <table class="center input">
       	<tr>
 
-      	<td>Points: </td><td><input type="text" value="7" id="deg" size="3" maxLength="3"></td>
+      	<td class="left">Points: </td><td class="right"><input type="text" value="7" id="deg" size="3" maxLength="3"></td>
           </tr>
           <tr>
-      	<td>Jump: </td><td><input type="text" value="3" id="jump" size="3" maxLength="3"></td>
+      	<td class="left">Jump: </td><td class="right"><input type="text" value="3" id="jump" size="3" maxLength="3"></td>
           </tr>
           <tr>
-      	<td><button id="redraw" onclick="addStar()">Draw</button></td>
-        <td><button id="clear" onclick="clearAll()">Clear</button>
+      	<td class="left"><button id="redraw" onclick="addStar()">Draw</button></td>
+        <td class="right"><button id="clear" onclick="clearAll()">Clear</button>
           </tr>
       </table>
       <br />

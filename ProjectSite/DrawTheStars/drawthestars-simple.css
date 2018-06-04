@@ -1,0 +1,29 @@
+/**
+* Styling for drawthestars-simple.
+* Includes styling for the fixed star drawing and info box.
+*/
+
+#info-cell {
+  width: 40%;
+}
+
+#info {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  height: 50%;
+  text-align: center;
+}
+
+table {
+  width: 80%;
+}
+
+td {
+  padding: 10px;
+}
+
+.input {
+  height: 2em;
+  width: 60%;
+}

@@ -8,28 +8,28 @@
     <header id="header"></header>
     <div id="back"></div>
     <div id="content">
-      <p><b><a href="drawthestars-simple.html">Draw a star?</a> || <a href="drawthestars-req.html">Draw a bunch of stars?</a> || Draw a ton of stars?</b></p>
-      <table id="condition-input" class="center">
+
+      <table id="condition-input" class="center input">
       	<tr>
-          <td class="right">
+          <td class="left">
             Points in Range:
           </td>
-          <td class="left">
+          <td class="right">
             <input type="text" size="3" maxlength="3" value="4" id="startPoints"></input> to
             <input type="text" size="3" maxlength="3" value="300" id="endPoints"></input>
           </td>
         </tr>
         <tr>
-          <td class="right">
+          <td class="left">
             Jump in Range:
           </td>
-          <td class="left">
+          <td class="right">
             <input type="text" size="3" maxlength="3" value="2" id="startJump"></input> to
             <input type="text" size="3" maxlength="3" value="150" id="endJump"></input>
           </td>
         </tr>
         <tr>
-      	   <td colspan="2" class="right">Condition: <input type="text" size="17" value="p == Math.pow(j, 2)" id="jump"></td>
+      	   <td colspan="2" class="left">Condition: </td><td class="right"><input type="text" size="17" value="p == Math.pow(j, 2)" id="jump"></td>
         </tr>
         <tr>
       	   <td class="right">

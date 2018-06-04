@@ -2,35 +2,30 @@
   <head>
     <title>Stars</title>
     <link href="../site.css" type="text/css" rel="stylesheet">
+    <link href="drawthestars-simple.css" type="text/css" rel="stylesheet">
   </head>
 
   <body>
     <header id="header"></header>
     <div id="back"></div>
 
+    <div id="errorDiv" class="error"></div>
+
     <div id="content">
 
-      <p><b>Draw a star? || <a href="drawthestars-req.html">Draw a bunch of stars?</a> || <a href="drawthestars-search.html">Draw a ton of stars?</a></b></p>
-      <table class="center" id="input">
-      	<tr>
-      	   <td>Points: </td><td><input type="text" value="8" id="deg" size="3" maxLength="3"></td>
-        </tr>
+      <div class="input">
+        <span class="op">Points: <input type="text" value="8" id="deg" size="3" maxLength="3"></span>
+        <span class="op">Jump: <input type="text" value="3" id="jump" size="3" maxLength="3"></span>
+        <span class="op"><input type="checkbox" id="connectAll">Connect All</span>
+        <span class="op"><button id="redraw" onclick="update()">Draw</button></span>
+      </div>
+
+      <table class="center">
         <tr>
-      	   <td>Jump: </td><td><input type="text" value="3" id="jump" size="3" maxLength="3"></td>
+          <td><canvas id="canvas"></canvas></td>
+          <td id="info-cell"><div id="info"></div></td>
         </tr>
-        <tr>
-          <td colspan="2"><input type="checkbox" id="connectAll">Connect All</td>
-        </tr>
-        <tr>
-      	   <td colspan="2"><center><button id="redraw" onclick="update()">Draw</button><center></td>
-           </tr>
       </table>
-      <br />
-
-      <canvas id="canvas" style="border: 1px solid black"></canvas>
-      <br /><br />
-
-      <div id="info"></div>
 
     </div>
 

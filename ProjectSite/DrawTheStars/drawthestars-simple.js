@@ -1,3 +1,9 @@
+/**
+* Script for drawthestars-simple.
+* Draws and updates a star polygons based on user input.
+* TODO: improve error handling, add more info
+*/
+
 //set up variables
 let deg = document.getElementById("deg").value;
 let jump = document.getElementById("jump").value%(deg/2);
@@ -128,12 +134,10 @@ function update() {
   deg = Math.abs(parseInt(document.getElementById("deg").value));
   jump = Math.abs(parseInt(document.getElementById("jump").value));
   connected = document.getElementById("connectAll").checked;
+  document.getElementById("errorDiv").innerHTML = "";
   if (!Number.isInteger(deg) || !Number.isInteger(jump)) {
-    alert(deg + ", " + jump);
-    let errorDiv = document.createElement("div");
-    errorDiv.className="error";
-    let errorText = document.createTextNode("Inputs must be integers.");
-    errorDiv.appendChild(errorText);
+    let errorText = document.createTextNode("Inputs must be numbers.");
+    document.getElementById("errorDiv").appendChild(errorText);
     document.getElementById("content").insertBefore(errorDiv, document.getElementById("input"));
     deg = 0;
     jump = 0;
