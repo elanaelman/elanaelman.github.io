@@ -57,7 +57,7 @@ header a {
   text-align: center;
   font-size: 16px;
   font-family: Tahoma;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .input {
@@ -65,8 +65,8 @@ header a {
   margin: 10px auto;
   border-radius: 10px;
   padding: .5em 1em .5em 1em;
-  white-space: nowrap;
-  overflow: scroll;
+  white-space: wrap;
+  overflow: auto;
   width: 30%;
 }
 
@@ -77,6 +77,14 @@ header a {
 #menu {
   background-color: white;
   border-radius: 5px;
+}
+
+
+#info {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
 }
 
 footer {
@@ -131,4 +139,8 @@ canvas {
 
 .left {
   float: left;
+}
+
+.nowrap {
+  white-space: nowrap;
 }

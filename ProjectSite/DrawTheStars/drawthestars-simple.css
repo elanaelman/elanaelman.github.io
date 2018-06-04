@@ -8,11 +8,7 @@
 }
 
 #info {
-  background-color: white;
-  border-radius: 5px;
-  padding: 10px;
   height: 50%;
-  text-align: center;
 }
 
 table {
@@ -24,6 +20,6 @@ td {
 }
 
 .input {
-  height: 2em;
+  height: auto;
   width: 60%;
 }
