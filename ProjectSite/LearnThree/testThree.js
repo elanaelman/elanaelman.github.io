@@ -78,10 +78,25 @@ function rotateShape(shape) {
   shape.rotation.x += Math.PI/32;
   shape.rotation.y += Math.PI/32;
   shape.rotation.z += Math.PI/32;
-  shape.position.x = 100*Math.sin(Date.now()/1000);
-  shape.position.y = 100*Math.sin(Date.now()/1000);
-  shape.position.z = -500 + 100*Math.sin(Date.now()/1000);
+  shape.position.x = 100*Math.sin(Date.now()/1000 * 2);
+  shape.position.y = 100*Math.sin(Date.now()/1000 * 4);
+  shape.position.z = -500 + 200*Math.sin(Date.now()/1000 * 3);
 }
+
+
+//make a textured tetrahedron?
+let bmap = THREE.ImageUtils.loadTexture('concrete-bump-map.jpg', {}, function(){});
+let texturedTetraMat = new THREE.MeshPhongMaterial({
+  color: 0xFFFFFF,
+  bumpMap: bmap,
+});
+let texturedTetraGeom = new THREE.TetrahedronGeometry(50, 0);
+let texturedTetra = new THREE.Mesh(texturedTetraGeom, texturedTetraMat);
+texturedTetra.position.z = -500;
+texturedTetra.rotation.x = 0.4;
+texturedTetra.rotation.y = -0.7;
+scene.add(texturedTetra);
+
 
 //make a point light
 const pointLight = new THREE.PointLight(0xDDFFCC);
@@ -89,8 +104,6 @@ pointLight.position.x = 300;
 pointLight.position.y = 200;
 pointLight.position.z = 100;
 scene.add(pointLight);
-
-//const ambientLight = new THREE.AmbientLight()
 
 //Render! Yay!
 function update() {
