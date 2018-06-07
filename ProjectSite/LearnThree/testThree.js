@@ -68,20 +68,34 @@ scene.add(box);
 let tetrahedronGeom = new THREE.TetrahedronGeometry(50, 0);
 let tetrahedronMaterial = new THREE.MeshNormalMaterial();
 let  tetrahedron = new THREE.Mesh(tetrahedronGeom, tetrahedronMaterial);
-tetrahedron.position.z = -400;
+tetrahedron.position.z = -500;
 tetrahedron.rotation.x = 0.4;
 tetrahedron.rotation.y = -0.7;
 scene.add(tetrahedron);
 
+//animate the tetrahedron?
+function rotateShape(shape) {
+  shape.rotation.x += Math.PI/32;
+  shape.rotation.y += Math.PI/32;
+  shape.rotation.z += Math.PI/32;
+  shape.position.x = 100*Math.sin(Date.now()/1000);
+  shape.position.y = 100*Math.sin(Date.now()/1000);
+  shape.position.z = -500 + 100*Math.sin(Date.now()/1000);
+}
+
 //make a point light
-const pointLight = new THREE.PointLight(0xFFFFFF);
+const pointLight = new THREE.PointLight(0xDDFFCC);
 pointLight.position.x = 300;
 pointLight.position.y = 200;
 pointLight.position.z = 100;
 scene.add(pointLight);
 
+//const ambientLight = new THREE.AmbientLight()
+
 //Render! Yay!
 function update() {
+  rotateShape(tetrahedron);
+  camera.updateProjectionMatrix();
   renderer.render(scene, camera);
   requestAnimationFrame(update);
 }
