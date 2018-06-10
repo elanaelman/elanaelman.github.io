@@ -22,8 +22,9 @@ const container = document.querySelector("#container");
 //create WebGL renderer, camera, scene
 const renderer = new THREE.WebGLRenderer();
 const camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
-camera.rotation.z = -.5;
-camera.rotation.y  = 0.1;
+//camera.rotation.z = -.5;
+//camera.rotation.y  = 0.1;
+camera.lookAt(0, 0, -500);
 const scene = new THREE.Scene();
 
 //set up scene
@@ -78,9 +79,9 @@ function rotateShape(shape) {
   shape.rotation.x += Math.PI/32;
   shape.rotation.y += Math.PI/32;
   shape.rotation.z += Math.PI/32;
-  shape.position.x = 100*Math.sin(Date.now()/1000 * 2);
-  shape.position.y = 100*Math.sin(Date.now()/1000 * 4);
-  shape.position.z = -500 + 200*Math.sin(Date.now()/1000 * 3);
+  shape.position.x = 150*Math.sin(Date.now()/1000 * 2);
+  shape.position.y = 150*Math.cos(Date.now()/1000 * 4);
+  shape.position.z = -500 + 300*Math.cos(Date.now()/1000 * 3);
 }
 
 
@@ -99,15 +100,26 @@ scene.add(texturedTetra);
 
 
 //make a point light
-const pointLight = new THREE.PointLight(0xDDFFCC);
-pointLight.position.x = 300;
-pointLight.position.y = 200;
-pointLight.position.z = 100;
-scene.add(pointLight);
+const pointLight1 = new THREE.PointLight(0xFF0000);
+pointLight1.position.x = 0;
+pointLight1.position.y = 200;
+pointLight1.position.z = -500;
+scene.add(pointLight1);
+//make an ambient light
+const ambientLight = new THREE.AmbientLight(0x0000FF, 0.25);
+scene.add(ambientLight);
+//make a point light
+const pointLight2 = new THREE.PointLight(0x0000FF, 0.3);
+pointLight2.position.x = 300;
+pointLight2.position.y = 200;
+pointLight2.position.z = 500;
+scene.add(pointLight2);
 
 //Render! Yay!
 function update() {
   rotateShape(tetrahedron);
+  camera.position.set(500*Math.sin(Date.now()/1000), 250*Math.sin(Date.now()/1000), -500+500*Math.cos(Date.now()/1000));
+  camera.lookAt(0, 0, -500);
   camera.updateProjectionMatrix();
   renderer.render(scene, camera);
   requestAnimationFrame(update);
