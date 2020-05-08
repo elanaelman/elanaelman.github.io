@@ -1,0 +1,16 @@
+body {
+  background-color: darkgray;
+}
+
+#canvas {
+  display: block;
+  position: relative;
+  margin: 30px auto;
+  background-color: white;
+  border: 2px solid black;
+}
+
+#footer {
+  position: absolute;
+  top: 93%;
+}

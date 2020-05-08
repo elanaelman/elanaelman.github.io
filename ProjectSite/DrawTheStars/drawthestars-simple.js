@@ -19,6 +19,17 @@ ctx.font = "14px sans-serif";
 ctx.save();
 draw();
 
+
+function pickColor() {
+  let rand = Math.floor(Math.random()*2);
+  switch(rand) {
+    case 0:
+      return "red";
+    case 1:
+      return "blue";
+  }
+}
+
 //function to draw a star
 function draw() {
 
@@ -48,9 +59,9 @@ function draw() {
   }
 
   //draw connecting lines
-  ctx.strokeStyle = "black";
   ctx.beginPath();
   for (let n=0; n < deg; n++) {
+    ctx.strokeStyle = "black";
     ctx.save()
     ctx.moveTo(0, r);
     ctx.rotate(2*pi*jump/deg);
@@ -113,15 +124,18 @@ function drawConnected() {
   ctx.beginPath();
   for (let a=1; a<deg; a++){
     for (let b=1; b<=(deg-a); b++) {
+      //alert(pickColor());
       ctx.save();
       ctx.moveTo(0, r);
       ctx.rotate(2*pi*b/deg);
       ctx.lineTo(0, r);
+      ctx.strokeStyle = pickColor();
+      ctx.stroke();
       ctx.restore();
     }
     ctx.rotate(2*pi/deg);
   }
-  ctx.stroke();
+  //ctx.stroke();
   ctx.restore();
   ctx.save();
 

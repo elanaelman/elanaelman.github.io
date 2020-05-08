@@ -105,7 +105,7 @@ function onMouseMove(event) {
     mouseX = event.clientX - window.innerWidth / 2;
     mouseY = event.clientY - window.innerHeight / 2;
     box.rotation.y = (event.clientX - window.innerWidth/2)*0.01;
-    box.rotation.x = (event.clientY - window.innerHeight/2)*0.01;
+    box.rotation.x = (window.innerHeight/2 - event.clientY)*0.01;
     //set up camera position
     camera.lookAt(scene.position);
 }
@@ -126,7 +126,7 @@ function funkyShape(shape) {
   shape.rotation.z += Math.PI/30;
   shape.position.x = 100*Math.sin(Date.now()/1000 * 7);
   shape.position.y = 100*Math.cos(Date.now()/1000 * 5);
-  shape.position.z = -500 + 200*Math.cos(Date.now()/1000 * 6);
+  shape.position.z = -500 + 100*Math.cos(Date.now()/1000 * 6);
 }
 
 
@@ -134,7 +134,7 @@ function funkyShape(shape) {
 function update() {
   funkyShape(tetrahedron);
   camera.position.set(400*Math.sin(Date.now()/1000),
-   250*Math.sin(Date.now()/1000), -500+600*Math.cos(Date.now()/1000));
+    50*Math.sin(Date.now()/1000), -500+600*Math.cos(Date.now()/1000));
   camera.lookAt(0, 0, -500);
   camera.updateProjectionMatrix();
   renderer.render(scene, camera);
